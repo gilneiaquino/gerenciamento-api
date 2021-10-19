@@ -1,4 +1,4 @@
-package br.com.escola.gerenciamento.api;
+package br.com.escola.gerenciamento.aluno;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
