@@ -30,7 +30,7 @@ public class AlunoController {
 	@Autowired
 	private TurmaRepository turmaRepository;
 
-	@PostMapping("/cadastrar")
+	@PostMapping("cadastrar")
 	@Transactional
 	public ResponseEntity<AlunoDto> cadastrar(@RequestBody AlunoForm alunoForm, UriComponentsBuilder uriBuilder) {
 		Aluno aluno = alunoForm.converter(turmaRepository);
@@ -40,12 +40,12 @@ public class AlunoController {
 		return ResponseEntity.created(uri).body(new AlunoDto(aluno));
 	}
 
-	@RequestMapping("/alterar")
+	@PostMapping("alterar")
 	public boolean Alterar(Aluno aluno) {
 		return true;
 	}
 
-	@RequestMapping("/excluir/{id}")
+	@PostMapping("excluir/{id}")
 	@Transactional
 	public ResponseEntity<Aluno> excluir(Long id) {
 		Optional<Aluno> optional = alunoRepository.findById(id);
@@ -56,7 +56,7 @@ public class AlunoController {
 		return ResponseEntity.notFound().build();
 	}
 
-	@RequestMapping("/listar")
+	@PostMapping("listar")
 	public List<AlunoDto> listar() {
 		List<Aluno> alunos = alunoRepository.findAll();
 		return AlunoDto.converter(alunos);
