@@ -1,6 +1,6 @@
 package br.com.escola.gerenciamento.aluno.modelo;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -16,7 +16,7 @@ public class Professor {
 	private Long id;
 
 	private String nome;
-	private LocalDateTime dtNascimento;
+	private LocalDate dtNascimento;
 	
 	@OneToMany(mappedBy = "professor")
 	private List<Turma> turmas;
@@ -36,21 +36,21 @@ public class Professor {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-
-	public LocalDateTime getDtNascimento() {
-		return dtNascimento;
-	}
-
-	public void setDtNascimento(LocalDateTime dtNascimento) {
-		this.dtNascimento = dtNascimento;
-	}
-
+ 
 	public List<Turma> getTurmas() {
 		return turmas;
 	}
 
 	public void setTurmas(List<Turma> turmas) {
 		this.turmas = turmas;
+	}
+
+	public LocalDate getDtNascimento() {
+		return dtNascimento;
+	}
+
+	public void setDtNascimento(LocalDate dtNascimento) {
+		this.dtNascimento = dtNascimento;
 	}
 	
 	

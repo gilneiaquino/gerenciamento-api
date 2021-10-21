@@ -33,7 +33,7 @@ public class AlunoController {
 	@PostMapping("cadastrar")
 	@Transactional
 	public ResponseEntity<AlunoDto> cadastrar(@RequestBody AlunoForm alunoForm, UriComponentsBuilder uriBuilder) {
-		Aluno aluno = alunoForm.converter(turmaRepository);
+		Aluno aluno = alunoForm.converter(turmaRepository,alunoForm);
 		alunoRepository.save(aluno);
 
 		URI uri = uriBuilder.path("/aluno/alterar/{id}").buildAndExpand(aluno.getId()).toUri();
