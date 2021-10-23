@@ -19,6 +19,8 @@ public class Aluno {
 	private String nome;
 	private SEXO sexo;
 	private LocalDate dataNascimento;
+	@ManyToOne
+	private Turma turma;
 
 	public Aluno() {
 		super();
@@ -32,12 +34,7 @@ public class Aluno {
 		this.dataNascimento = dataNascimento;
 		this.turma = turma;
 	}
-
-
-
-	@ManyToOne
-	private Turma turma;
-
+ 
 	public Long getId() {
 		return id;
 	}

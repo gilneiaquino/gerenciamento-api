@@ -1,5 +1,5 @@
 package br.com.escola.gerenciamento.aluno.modelo;
 
-public enum TURNO {
+public enum Turno {
 	MATUTINO, VESPECTINO, NOTURNO
 }
