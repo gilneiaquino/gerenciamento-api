@@ -3,10 +3,23 @@ APIS Rest do projeto gerenciamento web
 
 Iniciar aplicação com dockerfile: 
 
-Criação da imagem: 
+Criação da imagem aplicação: 
 
-Comando: sudo docker build -t gerenciamento-app-spring .
+sudo docker build -t gerenciamento-app-spring .
+
+Criação da imagem do banco postgres:
+
+sudo docker run -d \
+    --name docker-postgres \
+    -e POSTGRES_DB=db \
+    -e POSTGRES_USER=postgres \
+    -e POSTGRES_PASSWORD=postgres \
+   postgres:10.4
 
 Subir aplicação spring :
 
 sudo docker run -p 8080:8080 gerenciamento-app-spring
+
+Acessando os microserviços pelo swagger via navegador:
+
+http://localhost:8080/swagger-ui.html
