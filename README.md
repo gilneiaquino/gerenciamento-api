@@ -23,3 +23,14 @@ sudo docker run -p 8080:8080 gerenciamento-app-spring
 Acessando os microserviços pelo swagger via navegador:
 
 http://localhost:8080/swagger-ui.html
+
+
+======================
+Admine acesso banco mysql
+======================
+
+endereço: http://localhost:8090/
+Sistema: MySQL
+Servidor: mysqldb
+Usuário: root
+Senha:12345

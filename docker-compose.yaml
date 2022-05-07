@@ -1,1 +1,26 @@
-version: "3.7"
+version: '3.9'
+services:
+  mysqldb:
+    image: mysql:5.7
+    container_name: banco-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+    ports:
+      - 3306:3306 
+    networks:
+      - rede-local
+ 
+    
+    
+  adminer:
+    image: adminer
+    ports:
+      - 8090:8080
+    networks:
+      - rede-local
+
+networks:
+  rede-local:
+    driver: bridge
+
+ 
