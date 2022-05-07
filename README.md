@@ -34,3 +34,11 @@ Sistema: MySQL
 Servidor: mysqldb
 Usuário: root
 Senha:12345
+
+======================
+iniciar aplicacao com docker-compose
+======================
+Criar o banco "Escola"
+comando: docker-compose up
+Acessar API via swagger: 
+http://localhost:8080/swagger-ui.html
